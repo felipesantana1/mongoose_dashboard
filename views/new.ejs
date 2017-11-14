@@ -1,0 +1,14 @@
+<fieldset>
+<legend><h1>Add a new Animal!</h1></legend>
+<form action="/animals" method="post">
+    Species:<input type="text" name="species">
+    Name: <input type="text" name="name">
+    Description: <input type="text" name="desc">
+    <input type="submit">
+</form>
+<% for (i in errors) { %>
+    <%= errors[i].message %>
+<% } %>
+</fieldset>
+
+<a href="/"><button>Go Back!</button></a>

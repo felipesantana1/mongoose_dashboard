@@ -1,0 +1,19 @@
+<h1>Welcome to the Animals Dash-Board!</h1>
+<h3>Here are all our Animals!</h3>
+<table>
+    <tr>
+        <th>Species</th>
+        <th>Name:</th>
+        <th>Description:</th>
+        <th>Actions</th>
+    </tr>
+<%if(animals){for(i = animals.length-1; i >= 0; i--){ %>
+    <tr>
+        <td><%=animals[i].species%></td>
+        <td><a href="/animals/<%= animals[i]._id%>"><%=animals[i].name%></a></td>
+        <td><%=animals[i].description%></td>
+        <td><a href="/animals/<%= animals[i]._id%>">Show</a> <a href="/animals/edit/<%= animals[i]._id%>">Edit</a> <form action="/animals/destroy/<%= animals[i]._id%>" method="post"> <input type="submit" value="Delete"></form></td>
+    </tr>
+<% }} %>
+</table>
+<a href="/animals/new"><button>Add new Animal!</button></a>

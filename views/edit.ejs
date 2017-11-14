@@ -1,0 +1,15 @@
+<fieldset>
+        <legend><h1>Edit <%= animal.name %></h1></legend>
+        <form action="/animals/<%=animal._id%>" method="post">
+            Species:<input type="text" name="species" value="<%= animal.species %>">
+            Name: <input type="text" name="name" value="<%= animal.name %>">
+            Description: <input type="text" name="desc" value="<%= animal.description %>">
+            <input type="submit">
+        </form>
+        <% for (i in errors) { %>
+            <%= errors[i].message %>
+        <% } %>
+        </fieldset>
+        
+        <a href="/animals/<%= animal._id %>"><button>Go Back!</button></a>
+        <a href="/"><button>Home!</button></a>
